@@ -10,16 +10,14 @@ namespace _31_Jan.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        //public FileResult DownloadImage(string imageName)
-        //{
-        //    var imgPath = Path.Combine(Server.MapPath("~/Image"), imageName);
-        //    return File(imgPath, "Task/jpg", imageName);
-        //}
+       
 
         public string Img()
         {
             return "<h3>Click on the image to download it : </h3>" +
-                "<a href='downloadImage'><img src='../Image/Task.jpg' /></a>";
+                "<a href='../Image/Task.jpg' download />"+
+                 "<img src='../Image/Task.jpg'  />"
+                ;
         }
         public void downloadImage()
         {
