@@ -18,6 +18,11 @@ namespace _1_Feb
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+         //   routes.MapRoute(
+         //    name: "Products",
+         //    url: "{controller}/{action}/{id}",
+         //    defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional }
+         //);
         }
     }
 }

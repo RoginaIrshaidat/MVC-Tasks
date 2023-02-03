@@ -13,9 +13,10 @@ namespace _1_Feb.Controllers
         public ActionResult Index()
         {
             List<Models.Student> student = new List<Student>();
+            student.Add(new Student { ID = 3, Name = "Amer", Majour = "Computer Science", Faculity = "IT" });
             student.Add(new Student { ID=30,Name="Razan",Majour="Computer Enginer",Faculity="IT"});
             student.Add(new Student { ID = 32, Name = "Rogina", Majour = "Computer Science", Faculity = "IT" });
-            student.Add(new Student { ID = 3, Name = "Amer", Majour = "Computer Science", Faculity = "IT" });
+           
 
 
             return View(student);

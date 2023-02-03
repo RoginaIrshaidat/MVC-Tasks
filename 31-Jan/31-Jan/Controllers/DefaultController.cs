@@ -19,13 +19,13 @@ namespace _31_Jan.Controllers
                  "<img src='../Image/Task.jpg'  />"
                 ;
         }
-        public void downloadImage()
-        {
-            var imagePath = Server.MapPath("../Image/Task.jpg");
-            Response.AddHeader("Content-Disposition", "attachment;filename=Task.jpg");
-            Response.WriteFile(imagePath);
-            Response.End();
-        }
+        //public void downloadImage()
+        //{
+        //    var imagePath = Server.MapPath("../Image/Task.jpg");
+        //    Response.AddHeader("Content-Disposition", "attachment;filename=Task.jpg");
+        //    Response.WriteFile(imagePath);
+        //    Response.End();
+        //}
 
         public string AboutUs()
         {
