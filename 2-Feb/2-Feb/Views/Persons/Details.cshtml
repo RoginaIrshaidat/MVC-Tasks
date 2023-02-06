@@ -1,4 +1,5 @@
 ﻿@model _2_Feb.Models.Person
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 @{
     Layout = null;
@@ -9,10 +10,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
+    <title>Details</title>
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
     <div>
         <h4>Person</h4>
         <hr />
@@ -20,85 +20,80 @@
             <dt>
                 @Html.DisplayNameFor(model => model.First_Name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.First_Name)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Last_Name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Last_Name)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.E_mail)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.E_mail)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Phone)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Phone)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Age)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Age)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Job_Title)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Job_Title)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Gender)
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Gender)
+
+                @if (Model.Gender == true)
+                {
+                    <span>Female</span>
+                }
+                else
+                {
+                    <span>Male</span>
+                }
             </dd>
-    
             <dt>
                 @Html.DisplayNameFor(model => model.Image)
             </dt>
-    
+
             <dd>
-                @Html.DisplayFor(model => model.Image)
+
+                <img src="~/Image/@Model.Image" style="width:50px;height:50px;"/>
             </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.CV)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.CV)
-            </dd>
-    
+
         </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
     </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PersonID }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </body>
 </html>

@@ -19,7 +19,7 @@ namespace _2_Feb.Models
         public int PersonID { get; set; }
 
         [Display(Name = "First Name")]
-        [Required(ErrorMessage ="First name is required")]
+        [Required(ErrorMessage = "First name is required")]
         [StringLength(12)]
         public string First_Name { get; set; }
 
@@ -28,17 +28,23 @@ namespace _2_Feb.Models
         [StringLength(12)]
         public string Last_Name { get; set; }
 
+        [Display(Name = "Email")]
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress]
         public string E_mail { get; set; }
 
-        [RegularExpression("((079)|(078)|(077)){1}[0-9]{7}")]
-        public Nullable<decimal> Phone { get; set; }
+        [RegularExpression("((079)|(078)|(077)){1}[0-9]{7}", ErrorMessage = "The number must be Jordanian , start with 077 or 078 or 079")]
 
-        [Range(18,50)]
+        public string Phone { get; set; }
+
+        [Range(18, 50)]
         public Nullable<int> Age { get; set; }
+
         [MaxLength(10)]
         public string Job_Title { get; set; }
+
         public Nullable<bool> Gender { get; set; }
+        public string Image { get; set; }
+        public string CV { get; set; }
     }
 }

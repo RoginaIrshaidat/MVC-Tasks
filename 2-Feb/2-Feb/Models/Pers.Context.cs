@@ -13,10 +13,10 @@ namespace _2_Feb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MVCEntities : DbContext
+    public partial class MVCEntities1 : DbContext
     {
-        public MVCEntities()
-            : base("name=MVCEntities")
+        public MVCEntities1()
+            : base("name=MVCEntities1")
         {
         }
     

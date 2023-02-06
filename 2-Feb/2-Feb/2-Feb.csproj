@@ -98,54 +98,60 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\Per.Context.tt">
+    <Content Include="Models\Pers.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Per.Context.cs</LastGenOutput>
-      <DependentUpon>Per.edmx</DependentUpon>
+      <DependentUpon>Pers.edmx</DependentUpon>
+      <LastGenOutput>Pers.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Per.tt">
+    <Content Include="Models\Pers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Per.edmx</DependentUpon>
-      <LastGenOutput>Per.cs</LastGenOutput>
+      <DependentUpon>Pers.edmx</DependentUpon>
+      <LastGenOutput>Pers.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Per.Context.cs">
+    <Compile Include="Models\Pers.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Per.Context.tt</DependentUpon>
+      <DependentUpon>Pers.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Per.cs">
+    <Compile Include="Models\Pers.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Per.tt</DependentUpon>
+      <DependentUpon>Pers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Per.Designer.cs">
+    <Compile Include="Models\Pers.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Per.edmx</DependentUpon>
+      <DependentUpon>Pers.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs">
-      <DependentUpon>Per.tt</DependentUpon>
+      <DependentUpon>Pers.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\Per.edmx">
+    <EntityDeploy Include="Models\Pers.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Per.Designer.cs</LastGenOutput>
+      <LastGenOutput>Pers.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Per.edmx.diagram">
-      <DependentUpon>Per.edmx</DependentUpon>
+    <Content Include="Models\Pers.edmx.diagram">
+      <DependentUpon>Pers.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Views\Persons\Create.cshtml" />
+    <Content Include="Views\Persons\Delete.cshtml" />
+    <Content Include="Views\Persons\Details.cshtml" />
+    <Content Include="Views\Persons\Edit.cshtml" />
+    <Content Include="Views\Persons\Index.cshtml" />
     <Content Include="Views\People\Create.cshtml" />
     <Content Include="Views\People\Delete.cshtml" />
     <Content Include="Views\People\Details.cshtml" />
@@ -160,6 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CV\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

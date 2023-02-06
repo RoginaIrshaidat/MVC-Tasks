@@ -13,10 +13,12 @@
           <Property Name="First_Name" Type="varchar" MaxLength="50" />
           <Property Name="Last_Name" Type="varchar" MaxLength="50" />
           <Property Name="E_mail" Type="varchar" MaxLength="100" />
-          <Property Name="Phone" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
           <Property Name="Age" Type="int" />
           <Property Name="Job_Title" Type="varchar" MaxLength="50" />
           <Property Name="Gender" Type="bit" />
+          <Property Name="Image" Type="text" />
+          <Property Name="CV" Type="text" />
         </EntityType>
         <EntityContainer Name="MVCModelStoreContainer">
           <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
@@ -33,12 +35,14 @@
           <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="E_mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
           <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="Boolean" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="MVCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MVCEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Persons" EntityType="Self.Person" />
         </EntityContainer>
       </Schema>
@@ -46,10 +50,12 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MVCModelStoreContainer" CdmEntityContainer="MVCEntities">
+        <EntityContainerMapping StorageEntityContainer="MVCModelStoreContainer" CdmEntityContainer="MVCEntities1">
           <EntitySetMapping Name="Persons">
             <EntityTypeMapping TypeName="MVCModel.Person">
               <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="CV" ColumnName="CV" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
