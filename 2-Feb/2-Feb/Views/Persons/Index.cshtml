@@ -57,6 +57,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CV)
             </th>
+            <th></th>
         </tr>
 
         @foreach (var item in Model)
@@ -92,7 +93,7 @@
                     }
 
                 </td>
-                <td><img src="~/Image/@item.Image" style="height:30px;width:30px;"></td>
+                <td><img src="~/Image/@item.Image" style="height:75px;width:75px;"></td>
                 <td>  <a href="@item.CV" download="@item.CV">Cv</a></td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }, new { @class = "btn btn-primary" }) |

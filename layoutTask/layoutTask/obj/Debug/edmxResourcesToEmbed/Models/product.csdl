@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Chair">
+    <Key>
+      <PropertyRef Name="ChairID" />
+    </Key>
+    <Property Name="ChairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Chair_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Chair_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="img4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="inStock" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="MVCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chairs" EntityType="Self.Chair" />
+  </EntityContainer>
+</Schema>

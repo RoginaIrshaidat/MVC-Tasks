@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chairs">
+    <Key>
+      <PropertyRef Name="ChairID" />
+    </Key>
+    <Property Name="ChairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Chair_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Chair_Desc" Type="text" />
+    <Property Name="img" Type="text" />
+    <Property Name="img2" Type="text" />
+    <Property Name="img3" Type="text" />
+    <Property Name="img4" Type="text" />
+    <Property Name="inStock" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="MVCModelStoreContainer">
+    <EntitySet Name="Chairs" EntityType="Self.Chairs" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

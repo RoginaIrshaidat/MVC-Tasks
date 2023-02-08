@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chairs">
+          <Key>
+            <PropertyRef Name="ChairID" />
+          </Key>
+          <Property Name="ChairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Chair_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Chair_Desc" Type="text" />
+          <Property Name="img" Type="text" />
+          <Property Name="img2" Type="text" />
+          <Property Name="img3" Type="text" />
+          <Property Name="img4" Type="text" />
+          <Property Name="inStock" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="MVCModelStoreContainer">
+          <EntitySet Name="Chairs" EntityType="Self.Chairs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chair">
+          <Key>
+            <PropertyRef Name="ChairID" />
+          </Key>
+          <Property Name="ChairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Chair_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Chair_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="img3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="img4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="inStock" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="MVCEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chairs" EntityType="Self.Chair" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MVCModelStoreContainer" CdmEntityContainer="MVCEntities1">
+          <EntitySetMapping Name="Chairs">
+            <EntityTypeMapping TypeName="MVCModel.Chair">
+              <MappingFragment StoreEntitySet="Chairs">
+                <ScalarProperty Name="ChairID" ColumnName="ChairID" />
+                <ScalarProperty Name="Chair_Name" ColumnName="Chair_Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Chair_Desc" ColumnName="Chair_Desc" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="img2" ColumnName="img2" />
+                <ScalarProperty Name="img3" ColumnName="img3" />
+                <ScalarProperty Name="img4" ColumnName="img4" />
+                <ScalarProperty Name="inStock" ColumnName="inStock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

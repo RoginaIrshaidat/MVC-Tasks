@@ -1,10 +1,20 @@
 ﻿@model _6_Feb.Models.Order
 
 <div>
-    <h2> Last Order : </h2>
-    <hr />
-    <h3> Order ID : <span style="color:gray"> @Model.OrderID</span> </h3>
-    <h3> Order Date : <span style="color:gray"> @Model.OrderDate</span> </h3>
+    <h3> Last Order : </h3>
+   
+    <table class="dl-horizontal">
+        <tr>
+            <td> <h4> Order ID : </h4>  </td>
+            <td style="color:gray"> @Model.OrderID</td>
+        </tr>
+        <tr>
+            <td>  <h4> Order Date : </h4> </td>
+            <td style="color:gray"> @Model.OrderDate</td>
+        </tr>
+    </table>
+
+
 
 </div>
 
