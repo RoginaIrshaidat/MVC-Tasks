@@ -63,7 +63,7 @@
 
 
                 </ul>
-                @Html.Partial("_LoginPartial")
+
 
                 @if (User.IsInRole("Admin"))
                 {
@@ -72,6 +72,7 @@
                         <li>@Html.ActionLink("User-Role", "Index", "AspNetUserRoles")</li>
                     </ul>
                 }
+                @Html.Partial("_LoginPartial")
 
             </nav>
             <!-- Button Group -->

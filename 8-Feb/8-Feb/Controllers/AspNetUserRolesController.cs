@@ -10,7 +10,6 @@ using _8_Feb.Models;
 
 namespace _8_Feb.Controllers
 {
-    [Authorize(Roles ="Admin")]
     public class AspNetUserRolesController : Controller
     {
         private MVCEntities1 db = new MVCEntities1();
@@ -18,7 +17,7 @@ namespace _8_Feb.Controllers
         // GET: AspNetUserRoles
         public ActionResult Index()
         {
-            var aspNetUserRoles = db.AspNetUserRoles.Include(a => a.AspNetUser);
+            var aspNetUserRoles = db.AspNetUserRoles.Include(a => a.AspNetUser).Include(a => a.AspNetRole);
             return View(aspNetUserRoles.ToList());
         }
 
@@ -41,6 +40,7 @@ namespace _8_Feb.Controllers
         public ActionResult Create()
         {
             ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email");
+            ViewBag.RoleId = new SelectList(db.AspNetRoles, "Id", "Name");
             return View();
         }
 
@@ -59,6 +59,7 @@ namespace _8_Feb.Controllers
             }
 
             ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", aspNetUserRole.UserId);
+            ViewBag.RoleId = new SelectList(db.AspNetRoles, "Id", "Name", aspNetUserRole.RoleId);
             return View(aspNetUserRole);
         }
 
@@ -75,6 +76,7 @@ namespace _8_Feb.Controllers
                 return HttpNotFound();
             }
             ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", aspNetUserRole.UserId);
+            ViewBag.RoleId = new SelectList(db.AspNetRoles, "Id", "Name", aspNetUserRole.RoleId);
             return View(aspNetUserRole);
         }
 
@@ -92,6 +94,7 @@ namespace _8_Feb.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.UserId = new SelectList(db.AspNetUsers, "Id", "Email", aspNetUserRole.UserId);
+            ViewBag.RoleId = new SelectList(db.AspNetRoles, "Id", "Name", aspNetUserRole.RoleId);
             return View(aspNetUserRole);
         }
 

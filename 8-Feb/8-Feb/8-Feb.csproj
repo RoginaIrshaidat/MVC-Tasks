@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AspNetRolesController.cs" />
     <Compile Include="Controllers\AspNetUserRolesController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\ChairsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -223,10 +224,31 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CSS\animate.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\classy-nav.min.css" />
+    <Content Include="CSS\contact.css" />
+    <Content Include="CSS\core-style.css" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\jquery-ui.min.css" />
+    <Content Include="CSS\magnific-popup.css" />
+    <Content Include="CSS\nice-select.css" />
+    <Content Include="CSS\owl.carousel.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\pro-big-1.jpg" />
+    <Content Include="img\pro-big-2.jpg" />
+    <Content Include="img\pro-big-3.jpg" />
+    <Content Include="img\pro-big-4.jpg" />
+    <Content Include="js\active.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\classy-nav.min.js" />
+    <Content Include="js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="js\map-active.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="Models\Auth.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Auth.edmx</DependentUpon>
@@ -246,6 +268,7 @@
     <Content Include="Models\Auth.edmx.diagram">
       <DependentUpon>Auth.edmx</DependentUpon>
     </Content>
+    <Content Include="CSS\core-style.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -291,11 +314,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\AspNetUserRoles\Create.cshtml" />
-    <Content Include="Views\AspNetUserRoles\Delete.cshtml" />
-    <Content Include="Views\AspNetUserRoles\Details.cshtml" />
-    <Content Include="Views\AspNetUserRoles\Edit.cshtml" />
-    <Content Include="Views\AspNetUserRoles\Index.cshtml" />
     <Content Include="Views\AspNetRoles\Create.cshtml" />
     <Content Include="Views\AspNetRoles\Delete.cshtml" />
     <Content Include="Views\AspNetRoles\Details.cshtml" />
@@ -303,6 +321,16 @@
     <Content Include="Views\AspNetRoles\Index.cshtml" />
     <Content Include="Views\Shared\_TempLayout.cshtml" />
     <Content Include="Views\Chairs\Index.cshtml" />
+    <Content Include="Views\AspNetUserRoles\Create.cshtml" />
+    <Content Include="Views\AspNetUserRoles\Delete.cshtml" />
+    <Content Include="Views\AspNetUserRoles\Details.cshtml" />
+    <Content Include="Views\AspNetUserRoles\Edit.cshtml" />
+    <Content Include="Views\AspNetUserRoles\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\Create.cshtml" />
+    <Content Include="Views\AspNetUsers\Delete.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Edit.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

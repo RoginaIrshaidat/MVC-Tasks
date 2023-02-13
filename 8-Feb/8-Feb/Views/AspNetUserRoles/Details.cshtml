@@ -2,8 +2,6 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_TempLayout.cshtml";
-
 }
 
 <h2>Details</h2>
@@ -26,6 +24,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetRole.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetRole.Name)
         </dd>
 
     </dl>
