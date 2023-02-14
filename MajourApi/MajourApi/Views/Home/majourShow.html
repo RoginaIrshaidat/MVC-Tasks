@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   
+</head>
+<body>
+    <label id="show" style="display:flex;flex-direction:row;"></label>
+
+    <script>
+        async function read() {
+            try {
+                const api = "https://localhost:44388/api/Faculties";
+                const resp = await fetch(api);
+                const data = await resp.json();
+
+                readdata(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        function readdata(data) {
+            for (let i = 0; i < data.length; i++) {
+
+                document.getElementById('show').innerHTML += "<div class='bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3'></div></div><div class='text-center p-4'> <a class='d-block h5 mb-2' href=''>" + data[i].FacultieName + "<br></a><span class='text-primary me-1'>" + data[i].FacultieID + "</span> </div><div class='d-flex border-top'><small class='w-50 text-center border-end py-2'><a class='text-body' href='/Majours/Show/" + data[i].FacultieID + "'><br><br><i class='fa fa-eye text-primary me-2'></i>View detail</a></small><small class='w-50 text-center py-2'></small></div></div></div>";
+
+            }
+        }
+        read();
+    </script>
+</body>
+</html>

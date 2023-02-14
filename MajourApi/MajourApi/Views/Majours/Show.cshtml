@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MajourApi.Models.Majour>
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+@foreach (var item in Model)
+{
+    <h3>@item.MajourName</h3>
+}

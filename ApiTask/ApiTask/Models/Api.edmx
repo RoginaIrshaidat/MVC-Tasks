@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="APIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Faculties">
+          <Key>
+            <PropertyRef Name="FacultieID" />
+          </Key>
+          <Property Name="FacultieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FacultieName" Type="varchar" MaxLength="50" />
+          <Property Name="img" Type="text" />
+        </EntityType>
+        <EntityType Name="Majours">
+          <Key>
+            <PropertyRef Name="MajourID" />
+          </Key>
+          <Property Name="MajourID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MajourName" Type="varchar" MaxLength="50" />
+          <Property Name="img" Type="text" />
+          <Property Name="FacultieID" Type="int" />
+        </EntityType>
+        <Association Name="FK__Majours__Faculti__3C69FB99">
+          <End Role="Faculties" Type="Self.Faculties" Multiplicity="0..1" />
+          <End Role="Majours" Type="Self.Majours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculties">
+              <PropertyRef Name="FacultieID" />
+            </Principal>
+            <Dependent Role="Majours">
+              <PropertyRef Name="FacultieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="APIModelStoreContainer">
+          <EntitySet Name="Faculties" EntityType="Self.Faculties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Majours" EntityType="Self.Majours" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Majours__Faculti__3C69FB99" Association="Self.FK__Majours__Faculti__3C69FB99">
+            <End Role="Faculties" EntitySet="Faculties" />
+            <End Role="Majours" EntitySet="Majours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="APIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Faculty">
+          <Key>
+            <PropertyRef Name="FacultieID" />
+          </Key>
+          <Property Name="FacultieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacultieName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Majours" Relationship="Self.FK__Majours__Faculti__3C69FB99" FromRole="Faculties" ToRole="Majours" />
+        </EntityType>
+        <EntityType Name="Majour">
+          <Key>
+            <PropertyRef Name="MajourID" />
+          </Key>
+          <Property Name="MajourID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MajourName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FacultieID" Type="Int32" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Majours__Faculti__3C69FB99" FromRole="Majours" ToRole="Faculties" />
+        </EntityType>
+        <Association Name="FK__Majours__Faculti__3C69FB99">
+          <End Role="Faculties" Type="Self.Faculty" Multiplicity="0..1" />
+          <End Role="Majours" Type="Self.Majour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculties">
+              <PropertyRef Name="FacultieID" />
+            </Principal>
+            <Dependent Role="Majours">
+              <PropertyRef Name="FacultieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="APIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Faculties" EntityType="Self.Faculty" />
+          <EntitySet Name="Majours" EntityType="Self.Majour" />
+          <AssociationSet Name="FK__Majours__Faculti__3C69FB99" Association="Self.FK__Majours__Faculti__3C69FB99">
+            <End Role="Faculties" EntitySet="Faculties" />
+            <End Role="Majours" EntitySet="Majours" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="APIModelStoreContainer" CdmEntityContainer="APIEntities">
+          <EntitySetMapping Name="Faculties">
+            <EntityTypeMapping TypeName="APIModel.Faculty">
+              <MappingFragment StoreEntitySet="Faculties">
+                <ScalarProperty Name="FacultieID" ColumnName="FacultieID" />
+                <ScalarProperty Name="FacultieName" ColumnName="FacultieName" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Majours">
+            <EntityTypeMapping TypeName="APIModel.Majour">
+              <MappingFragment StoreEntitySet="Majours">
+                <ScalarProperty Name="MajourID" ColumnName="MajourID" />
+                <ScalarProperty Name="MajourName" ColumnName="MajourName" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="FacultieID" ColumnName="FacultieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

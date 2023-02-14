@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APIModelStoreContainer" CdmEntityContainer="APIEntities">
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="APIModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculties">
+          <ScalarProperty Name="FacultieID" ColumnName="FacultieID" />
+          <ScalarProperty Name="FacultieName" ColumnName="FacultieName" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Majours">
+      <EntityTypeMapping TypeName="APIModel.Majour">
+        <MappingFragment StoreEntitySet="Majours">
+          <ScalarProperty Name="MajourID" ColumnName="MajourID" />
+          <ScalarProperty Name="MajourName" ColumnName="MajourName" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="FacultieID" ColumnName="FacultieID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
